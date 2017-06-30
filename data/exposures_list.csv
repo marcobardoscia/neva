@@ -1,0 +1,4 @@
+lender,borrower,amount
+A,B,0.5
+B,C,0.5
+C,A,0.5

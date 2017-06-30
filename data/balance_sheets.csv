@@ -1,0 +1,4 @@
+bank_name,external_asset,external_liabilities,sigma_equity,maturity
+A,10,9,0.2,1.25
+B,5,4,0.2,1.25
+C,3,2,0.2,1.25

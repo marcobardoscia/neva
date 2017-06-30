@@ -1,0 +1,26 @@
+[
+    {
+        "name" : "A",
+        "extasset" : 10.0,
+        "extliab" : 9.0,
+        "ibasset" : {
+            "B" : 0.5
+        },
+        "ibliabtot" : 0.0
+    },
+    {
+        "name" : "B",
+        "extasset" : 5.0,
+        "extliab" : 4.0,
+        "ibasset" : {
+            "C" : 0.5
+        },
+        "ibliabtot" : 0.5
+    },
+    {
+        "name" : "C",
+        "extasset" : 3.0,
+        "extliab" : 2.0,
+        "ibliabtot" : 0.5
+    }
+]
