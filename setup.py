@@ -8,7 +8,7 @@ setup(name='neva',
                        allows to perform the valuation of equities of banks 
                        that hold cross-holding of debt. Several known 
                        contagion algorithms (e.g. Furfine, Eisenberg and Noe, 
-                       and Linear DebtRank) are special cases of Neva.'''
+                       and Linear DebtRank) are special cases of Neva.''',
       url='http://github.com/marcobardoscia/neva',
       author='Marco Bardoscia',
       author_email='marco.open@gmail.com',
