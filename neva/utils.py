@@ -51,12 +51,17 @@ def shock_and_solve(b_sys, equity_delta, method, solve_assets=True, **kwargs):
                                                           bnk.ibliabtot, rr, 
                                                           bnk.sigma_asset))
             # this should not have any effect, as the valuation function is
-            # constant                                              
+            # constant
             elif method == 'eisenberg_noe':
                 bnk.ibeval = (lambda ae, bnk=bnk: 
                               ibeval.eisenberg_noe(bnk.equity, bnk.ibliabtot))
         b_sys.fixedpoint_extasset_sigmaasset()
         
+    # Used only in lin_debtrank method
+    if method == 'lin_debtrank':
+        for bnk in b_sys:
+            bnk.equity0 = bnk.equity
+
     # shocking external assets of the same "pound" amount of the equity
     for idx, bnk in enumerate(b_sys):
         bnk.equity -= equity_delta[idx]
@@ -78,4 +83,6 @@ def shock_and_solve(b_sys, equity_delta, method, solve_assets=True, **kwargs):
                                                       bnk.sigma_asset))
         elif method == 'eisenberg_noe':
             bnk.ibeval = lambda e, bnk=bnk: ibeval.eisenberg_noe(e, bnk.ibliabtot)
+        elif method == 'lin_debtrank':
+            bnk.ibeval = lambda e, bnk=bnk: ibeval.lin_dr(e, bnk.equity0)
     b_sys.fixedpoint_equity()
