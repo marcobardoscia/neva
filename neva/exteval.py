@@ -22,44 +22,13 @@ from __future__ import division
 from .ibeval import lognormal_pd, blackcox_pd
 
 
-def rogers_veraart(equity, extasset, extliab, alpha):
-    """Valuation function for external assets a la Rogers and Veraart.
-    
-    If the equity is larger than zero, external assets and liabilities are 
-    taken at their face value; otherwise they are both discounted by a factor
-    `alpha`. This mechanism is meant to capture the effect on the valuation of 
-    external assets of explicit default costs, as the ones due to fire sales 
-    to liquidate such assets.  
-
-    Parameters:
-        equity (float): equity
-        extasset (float): external assets
-        extliab (float): external liabilities
-        alpha (float): discount factor for external assets and liabilities 
-                       in case of negative equity
-
-    Returns:
-        value taken by the external valuation function
-
-    References:
-        [1] L. C. G. Rogers, L. A. M. Veraart. Failure and rescue in an 
-            interbank network, Management Science 59(4), 882-898 (2013)
-    """
-    if equity > 0:
-        return extasset - extliab
-    else:
-        return alpha * (extasset - extliab)
-
-
 def default_cost(equity, extasset, extliab, alpha):
     """Valuation function for external assets including default costs.
-    
-    If the equity is larger than zero, external assets are taken at their face 
-    value; otherwise they are both discounted by a factor`alpha`. External 
-    liabilities are always taken at face value. This mechanism is a variation 
-    of `rogers_veraart`, in which also external liabilities are discounted by 
-    the same factor.
-    
+
+    If the equity is larger than zero, external assets are taken at their face
+    value; otherwise they are both discounted by a factor `alpha`. External
+    liabilities are always taken at face value.
+
     Parameters:
         equity (float): equity
         extasset (float): external assets

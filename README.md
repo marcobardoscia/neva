@@ -48,7 +48,7 @@ pay_vec = [bnk.ibliabtot if bnk.equity >= 0 else
 ```
 
 ## A more complex example
-Here we run an analysis simalr to that run in [2].
+Here we run an analysis similar to that run in [2].
 
 ```python
 import neva
@@ -60,7 +60,7 @@ bsys, params = neva.parse_csv('balance_sheets.csv', 'exposures_table.csv')
 # estimated via the volatility of equities.
 sigma_equity = [float(params[bnk]['sigma_equity']) for bnk in params]
 bsys = neva.BankingSystemGBMse.with_sigma_equity(bsys, sigma_equity)
-    
+
 # storing initial equity
 equity_start = bsys.get_equity()
 
@@ -74,7 +74,7 @@ recovery_rate = [0.6 for _ in bsys]
 neva.shock_and_solve(bsys, equity_delta, 'exante_en_blackcox_gbm', 
                      solve_assets=False, recovery_rate=recovery_rate)
 
-# reading equities after one round and after all rounds   
+# reading equities after one round and after all rounds  
 equity_direct = bsys.history[1]
 equity_final = bsys.history[-1]
 ```
@@ -84,11 +84,13 @@ We will target the latest release of Python 3 and, as long as possible,
 Python 2.7. Only built-in packages are required.
 
 ## References
-[1] Paolo Barucca, Marco Bardoscia, Fabio Caccioli, Marco D'Errico, Gabriele 
-    Visentin, Stefano Battiston, and Guido Caldarelli. Network Valuation in 
-    Financial Systems (2016). Available at 
-    [SSRN](https://ssrn.com/abstract=2795583).
+[1] Paolo Barucca, Marco Bardoscia, Fabio Caccioli, Marco D'Errico, Gabriele
+    Visentin, Guido Caldarelli, and Stefano Battiston.
+    Network valuation in financial systems,
+    Mathematical Finance (2020).
+    [https://doi.org/10.1111/mafi.12272](https://doi.org/10.1111/mafi.12272)
 
-[2] Marco Bardoscia, Paolo Barucca, Adam Brinley Codd, John Hill. The decline 
-    of solvency contagion risk (2017). 
-    [Bank of England Staff Working Paper No. 662](http://www.bankofengland.co.uk/research/Pages/workingpapers/2017/swp662.aspx).
+[2] Marco Bardoscia, Paolo Barucca, Adam Brinley Codd, and John Hill.
+    Forward-looking solvency contagion,
+    Journal of Economic Dynamics and Control 108, 103755 (2019).
+    [https://doi.org/10.1016/j.jedc.2019.103755](https://doi.org/10.1016/j.jedc.2019.103755)

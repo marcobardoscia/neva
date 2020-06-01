@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(name='neva',
-      version='0.1',
+      version='0.2',
       description='Network valuation in financial systems',
       long_description='''This is an implementation of the Neva framework 
-                       introduced in https://ssrn.com/abstract=2795583. Neva 
+                       in https://doi.org/10.1111/mafi.12272. Neva 
                        allows to perform the valuation of equities of banks 
                        that hold cross-holding of debt. Several known 
                        contagion algorithms (e.g. Furfine, Eisenberg and Noe, 
