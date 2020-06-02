@@ -48,7 +48,8 @@ def exante_en_blackcox(equity, rho, prob_def):
             and Control, https://doi.org/10.1016/j.jedc.2019.103755
         [2] M. Bardoscia, F. Caccioli, J. I. Perotti, G. Vivaldo,
             G. Caldarelli. Distress propagation in complex networks: the case
-            of non-linear DebtRank, https://arxiv.org/abs/1512.04460
+            of non-linear DebtRank, PLoS One,
+            https://doi.org/10.1371/journal.pone.0163825
         [3] M. Bardoscia, S. Battiston, F. Caccioli, G. Caldarelli.
             Pathways towards instability in financial networks, Nature
             Communications, https://www.nature.com/articles/ncomms14416
@@ -102,11 +103,12 @@ def lin_dr(equity, equity0):
 
     References:
         [1] M. Bardoscia, S. Battiston, F. Caccioli, G. Caldarelli. DebtRank:
-            A Microscopic Foundation for Shock Propagation, PLoS One 10(6),
-            e0130406 (2015)
+            A Microscopic Foundation for Shock Propagation, PLoS One,
+            https://doi.org/10.1371/journal.pone.0130406
         [2] S. Battiston, M. Puliga, R. Kaushik, P. Tasca, G. Caldarelli.
             DebtRank: Too Central to Fail? Financial Networks, the FED and
-            Systemic Risk, Scientific Reports 2, 541 (2012)
+            Systemic Risk, Scientific Reports,
+            https://www.nature.com/articles/srep00541
     """
     prob_def = rel_loss(equity, equity0)
     #return gen_dr(equity, 0.0, prob_def)
@@ -147,7 +149,7 @@ def exante_en_merton(equity, extasset, liabtot, rho, prob_def,
             Mathematical Finance, https://doi.org/10.1111/mafi.12272
         [2] P. Barucca, M. Bardoscia, F. Caccioli, M. D'Errico, G. Visentin,
             S. Battiston, G. Caldarelli. Network Valuation in Financial Systems,
-            https://arxiv.org/abs/1606.05164
+            https://arxiv.org/abs/1606.05164v2
     """
     return ( (1 - prob_def)
              + rho * ((1 + (equity - extasset) / liabtot) *
@@ -283,7 +285,7 @@ def lin_cav_aext(equity, liabtot, equity0):
     References:
         [1] P. Barucca, M. Bardoscia, F. Caccioli, M. D'Errico, G. Visentin, 
             S. Battiston, G. Caldarelli. Network Valuation in Financial Systems, 
-            https://arxiv.org/abs/1606.05164
+            https://arxiv.org/abs/1606.05164v2
 
     """
     # pylint: disable=C0103
@@ -316,7 +318,7 @@ def end_lin_dr(equity, extasset, liabtot, rho, equity0):
     References:
         [1] P. Barucca, M. Bardoscia, F. Caccioli, M. D'Errico, G. Visentin,
             S. Battiston, G. Caldarelli. Network Valuation in Financial Systems,
-            https://arxiv.org/abs/1606.05164
+            https://arxiv.org/abs/1606.05164v2
     """
     prob_def = rel_loss(equity, equity0)
     prob_def_shifted = rel_loss(equity + liabtot, equity0)
@@ -399,8 +401,8 @@ def roukny_battiston(equity, rho):
     
     References:
         [1] S. Battiston, G. Caldarelli, R. May, T. Roukny, J. E. Stiglitz. 
-            The price of complexity in financial networks, PNAS 113(36), 
-            10031-10036 (2016)
+            The price of complexity in financial networks, PNAS, 
+            https://doi.org/10.1073/pnas.1521573113
     """
     if equity > 0:
         return 1.0

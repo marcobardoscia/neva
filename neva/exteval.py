@@ -14,8 +14,8 @@ where L_i^e are the external liabilities of bank i.
 
 References:
     [1] P. Barucca, M. Bardoscia, F. Caccioli, M. D'Errico, G. Visentin, 
-        S. Battiston, G. Caldarelli. Network Valuation in Financial Systems, 
-        https://arxiv.org/abs/1606.05164
+        G. Caldarelli, S. Battiston. Network Valuation in Financial Systems, 
+        Mathematical Finance, https://doi.org/10.1111/mafi.12272
 """
 
 from __future__ import division
