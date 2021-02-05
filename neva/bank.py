@@ -63,7 +63,7 @@ import numbers
 
 
 # pylint: disable=too-many-instance-attributes
-class Bank(object):
+class Bank:
     """Bank with balance sheet and valuation functions.
     
     Attributes:
