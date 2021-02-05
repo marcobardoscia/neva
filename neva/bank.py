@@ -59,7 +59,6 @@ References:
         Mathematical Finance, https://doi.org/10.1111/mafi.12272
 """
 
-from __future__ import division
 import numbers
 
 

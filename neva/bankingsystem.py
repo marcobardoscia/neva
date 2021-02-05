@@ -1,7 +1,6 @@
 """Collection of banks constituing a banking system.
 """
 
-from __future__ import division
 import collections
 from .bank import Bank
 

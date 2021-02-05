@@ -17,4 +17,3 @@ the lender.
 Presently lender interbank valuation functions are not used or implemented.
 """
 
-from __future__ import division
