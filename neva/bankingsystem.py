@@ -1,12 +1,11 @@
 """Collection of banks constituing a banking system.
 """
 
-from __future__ import division
 import collections
 from .bank import Bank
 
 
-class BankingSystem(object):
+class BankingSystem:
     """Collection of banks.
     
     This container allows to perform operations that require access to data of

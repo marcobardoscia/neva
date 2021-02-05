@@ -2,7 +2,6 @@
 which external assets follow a Geometric Brownian Motion.
 """
 
-from __future__ import division
 import math
 from .adjust import BankAdjust, BankingSystemAdjust
 

@@ -3,7 +3,6 @@ which external assets can be adjusted such that the fixed-point equity is
 initially consistent with its naive value.
 """
 
-from __future__ import division
 from .bank import Bank
 from .bankingsystem import BankingSystem
     
